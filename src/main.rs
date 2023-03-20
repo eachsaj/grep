@@ -34,11 +34,11 @@ fn main() {
 }
 
 fn load_config(args: Vec<String>) -> Config {
-    let config = Config::parse(&args).unwrap_or_else(|er| {
+    Config::parse(&args).unwrap_or_else(|er| {
         println!("failed to parse : {}", er);
         process::exit(1);
-    });
-    config
+    })
+   
 }
 
 fn run(config: Config) -> Result<(), Box<dyn Error>> {
